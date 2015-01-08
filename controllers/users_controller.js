@@ -25,6 +25,7 @@ exports.signup = function(req, res){
 };
 
 exports.login = function(req, res){
+
   User.findOne({ username: req.body.username })
   .exec(function(err, user) {
     if (!user){
