@@ -14,8 +14,8 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new GoogleStrategy({
-    returnURL: 'http://localhost/auth/google/return',
-    realm: 'http://localhost/'
+    returnURL: 'http://localhost:8088/auth/google/return',
+    realm: 'http://localhost:8088/'
   },
   function(identifier, profile, done) {
     process.nextTick(function () {
@@ -74,4 +74,4 @@ app.get('/ginfo', function(req, res){
     res.redirect('/glogin');
   }
 });
-app.listen(80);
+app.listen(8088);
